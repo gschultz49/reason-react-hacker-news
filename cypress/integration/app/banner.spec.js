@@ -1,5 +1,7 @@
-const baseUrl = "http://localhost:8080/";
-const pageUrl = `${baseUrl}`;
+import bannerJson from "../../fixtures/banner.json";
+const pageUrl = `${bannerJson.baseUrl}`;
+
+
 
 describe("Banner test", function() {
   it("Banner is present", function() {
@@ -8,7 +10,7 @@ describe("Banner test", function() {
     cy.visit(pageUrl);
     // check main banner title
     cy.get(banner)
-      .contains("Reason React Hacker News")
+      .contains(bannerJson.bannerTitle)
 
     // check About link
     cy.get(about)
